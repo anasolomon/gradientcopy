@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Background Generator</title>
+</head>
+<body id="body">
+    <h1>Background Generator</h1>
+    <a href="#" onclick="CopyToClipboard('sample');return false;">
+        <h3 id="sample">Text will appear here. Click to copy.</h3></a>
+    <h2>Current CSS Background</h2>
+    <input oninput="gradient()" class="color1" type="color" name="color1" value="#000000">
+    <input oninput="gradient()" class="color2" type="color" name="color2" value="#ffffff">
+    <script type="text/javascript" src="script.js"></script>
+    <!-- SCRIPT BELOW IS FOR COPYING ANY ITEM WITH id = sample INSIDE AN ANCHOR -->
+    <script>
+        function CopyToClipboard(id)
+        {
+        var r = document.createRange();
+        r.selectNode(document.getElementById(id));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        }
+        </script>
+</body>
+</html>
